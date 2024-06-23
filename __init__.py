@@ -5,14 +5,14 @@ import filecmp
 
 
 
-print("### Loading: Save as Webp")
+print("### Loading: Save as Jpeg")
 
 comfy_path = os.path.dirname(folder_paths.__file__)
 
 def setup_js():
-   webp_path = os.path.dirname(__file__)
-   js_dest_path = os.path.join(comfy_path, "web", "extensions", "webpinfo")
-   js_src_path = os.path.join(webp_path, "webpinfo", "webpinfo.js")
+   jpeg_path = os.path.dirname(__file__)
+   js_dest_path = os.path.join(comfy_path, "web", "extensions", "jpeginfo")
+   js_src_path = os.path.join(jpeg_path, "jpeginfo", "jpeginfo.js")
      
    ## Creating folder if it's not present, then Copy. 
    print("Copying JS files for Workflow loading")
@@ -26,6 +26,6 @@ def setup_js():
                      
 setup_js()
 
-from .Save_as_webp import NODE_CLASS_MAPPINGS
+from .Save_as_jpeg import NODE_CLASS_MAPPINGS
 
 __all__ = ['NODE_CLASS_MAPPINGS']

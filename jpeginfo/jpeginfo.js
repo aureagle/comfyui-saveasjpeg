@@ -1,11 +1,11 @@
 import { app } from "/scripts/app.js";
 app.registerExtension({
-	name: "kaharos.webpsave",
+	name: "kaharos.jpegsave",
 setup(app,file){
 
-async function getWebpExifData(webpFile) {
+async function getjpegExifData(jpegFile) {
 	const reader = new FileReader();
-	reader.readAsArrayBuffer(webpFile);
+	reader.readAsArrayBuffer(jpegFile);
   
 	return new Promise((resolve, reject) => {
 	  reader.onloadend = function() {
@@ -43,16 +43,16 @@ async function getWebpExifData(webpFile) {
 
 const handleFile = app.handleFile;
 app.handleFile = async function(file) { // Add the 'file' parameter to the function definition
-	if (file.type === "image/webp") {
+	if (file.type === "image/jpeg") {
 		
-		const webpInfo =await getWebpExifData(file);
-		if (webpInfo) {
-			if (webpInfo.workflow) {
+		const jpegInfo =await getjpegExifData(file);
+		if (jpegInfo) {
+			if (jpegInfo.workflow) {
 				if(app.load_workflow_with_components) {
-					app.load_workflow_with_components(webpInfo.workflow);
+					app.load_workflow_with_components(jpegInfo.workflow);
 				}
 				else
-					this.loadGraphData(JSON.parse(webpInfo.workflow));
+					this.loadGraphData(JSON.parse(jpegInfo.workflow));
 			}
 		}
 	} else {
