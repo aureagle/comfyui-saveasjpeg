@@ -1,22 +1,22 @@
-# ComfyUI-Saveaswebp
-Save a picture as Webp file in Comfy + Workflow loading
+# ComfyUI-Saveasjpeg
+Save a picture as jpeg file in Comfy + Workflow loading
 
 ## Warning: 
 
 I'm a novice at best at coding and some of the code is pretty hacky, so this can definitely break.
 
-Also, Webp only supports files up to 16383 x 16383.
+Also, jpeg only supports files up to 16383 x 16383.
 
 ### Known issues:
 
-Import of Webpfiles breaks if import a workflow that has }Prompt:{ in a Node that has dynamic wildcards disabled.
+Import of jpegfiles breaks if import a workflow that has }Prompt:{ in a Node that has dynamic wildcards disabled.
 
 
 Node doesn't resize on Save - image is in there, just needs to be resized to be visible.
 
 ## Description:
 
-This adds a custom node to save a picture as a Webp File and also adds a script to Comfy to drag and drop generated webpfiles into the UI to load the workflow.
+This adds a custom node to save a picture as a jpeg File and also adds a script to Comfy to drag and drop generated jpegfiles into the UI to load the workflow.
 
 I've added a compression slider and a lossy/lossless option. The compression slider is a bit misleading.
 
@@ -30,7 +30,7 @@ On default it's set to lossy with a compression of 80, below are examples for th
 
 ## Installation: 
 
-Use git clone https://github.com/Kaharos94/ComfyUI-Saveaswebp in your ComfyUI custom nodes directory
+Use git clone https://github.com/aureagle/ComfyUI-Saveasjpeg in your ComfyUI custom nodes directory
 
 ## Examples: 
 
